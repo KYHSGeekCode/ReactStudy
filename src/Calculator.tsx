@@ -1,26 +1,27 @@
 import React, {useState} from 'react';
 
 function Calculator() {
-    const [number, setNumber] = useState(0);
-    const [number2, setNumber2] = useState(0);
+    const [inputs, setInputs] = useState({
+        number1: 0,
+        number2: 0
+    });
+    const {number1, number2} = inputs;
 
-    const onChange1 = (e) => {
-        const inputNumber = e.target.value.replace(/\D/g, '');
-        setNumber(+inputNumber);
+    const onChange = (e) => {
+        const {value, name} = e.target;
+        const inputNumber = value.replace(/\D/g, '');
+        setInputs({
+            ...inputs,
+            [name]: +inputNumber
+        });
     }
-
-    const onChange2 = (e) => {
-        const inputNumber = e.target.value.replace(/\D/g, '');
-        setNumber2(+inputNumber);
-    }
-
     return (
         <div>
-            <input onChange={onChange1}/>
+            <input name={"number1"} onChange={onChange}/>
             +
-            <input onChange={onChange2}/>
+            <input name={"number2"} onChange={onChange}/>
             =
-            {number + number2}
+            {number1 + number2}
         </div>
     )
 }
