@@ -1,9 +1,10 @@
 import logo from './logo.svg';
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
 import Hello from "./Hello.tsx";
 import Wrapper from "./Wrapper.tsx";
 import Counter from "./Counter.tsx";
+import Calculator from "./Calculator.tsx";
 
 function App() {
     const name = '응애';
@@ -23,6 +24,7 @@ function App() {
             <Wrapper>
                 <Hello color={"green"}/>
                 <Counter/>
+                <Calculator/>
             </Wrapper>
         </>
     );
