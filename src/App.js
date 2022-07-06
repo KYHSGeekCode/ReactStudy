@@ -5,6 +5,7 @@ import Hello from "./Hello.tsx";
 import Wrapper from "./Wrapper.tsx";
 import Counter from "./Counter.tsx";
 import Calculator from "./Calculator.tsx";
+import UserList from "./UserList.tsx";
 
 function App() {
     const name = '응애';
@@ -24,6 +25,7 @@ function App() {
                 <Counter/>
                 <Calculator/>
             </Wrapper>
+            <UserList/>
         </>
     );
 }
